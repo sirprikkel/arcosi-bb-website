@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accommodatie — Arcosí Bed & Breakfast Ravenstein</title>
+  <meta name="description" content="Ontdek onze luxe tiny house bij Arcosí B&B. Kingsize bed, regendouche, privé terras en zwembad in Ravenstein aan de Maas.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://analytics.code-lieshout.nl/script.js" data-website-id="73c680f7-535e-4c99-a5e0-ac5df207ed00"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#1E3A8A', secondary: '#3B82F6', accent: '#CA8A04', 'accent-light': '#EAB308', surface: '#F8FAFC', dark: '#1E293B' },
+        fontFamily: { serif: ['Cormorant', 'serif'], sans: ['Montserrat', 'sans-serif'] }
+      }}
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:'Montserrat',sans-serif}
+    .glass{backdrop-filter:blur(15px) saturate(180%);-webkit-backdrop-filter:blur(15px) saturate(180%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+    .glass-dark{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(30,58,138,.7);border:1px solid rgba(255,255,255,.15)}
+    .glass-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.3);transition:all 500ms cubic-bezier(.4,0,.2,1)}
+    .glass-card:hover{background:rgba(255,255,255,.8);transform:translateY(-4px);box-shadow:0 20px 60px rgba(30,58,138,.12)}
+    .gold-gradient{background:linear-gradient(135deg,#CA8A04,#EAB308,#CA8A04)}
+    .hero-overlay{background:linear-gradient(to bottom,rgba(30,58,138,.3),rgba(30,58,138,.5),rgba(30,58,138,.8))}
+    .fluid-reveal{opacity:0;transform:translateY(30px);transition:all 600ms cubic-bezier(.4,0,.2,1)}
+    .fluid-reveal.visible{opacity:1;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){.fluid-reveal{opacity:1;transform:none;transition:none}.glass-card:hover{transform:none}}
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;cursor:zoom-out}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px}
+  </style>
+</head>
+<body class="bg-surface text-dark antialiased">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-dark transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="font-serif text-2xl font-bold text-white tracking-wider cursor-pointer">Arcosí</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white/90 hover:text-white font-light text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer">Home</a>
+          <a href="accommodatie.html" class="text-white font-medium text-sm tracking-widest uppercase cursor-pointer">Accommodatie</a>
+          <a href="omgeving.html" class="text-white/90 hover:text-white font-light text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer">Omgeving</a>
+          <a href="contact.html" class="text-white/90 hover:text-white font-light text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer">Contact</a>
+          <a href="contact.html" class="gold-gradient text-white px-6 py-2.5 rounded-full text-sm font-medium tracking-wider uppercase hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 cursor-pointer">Boeken</a>
+        </div>
+        <button id="menu-toggle" class="md:hidden flex flex-col items-center justify-center w-11 h-11 cursor-pointer" aria-label="Menu">
+          <span class="block w-6 h-0.5 bg-white mb-1.5"></span><span class="block w-6 h-0.5 bg-white mb-1.5"></span><span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden glass-dark">
+      <div class="px-4 py-6 space-y-4">
+        <a href="index.html" class="block text-white/80 font-light text-sm tracking-widest uppercase cursor-pointer">Home</a>
+        <a href="accommodatie.html" class="block text-white font-medium text-sm tracking-widest uppercase cursor-pointer">Accommodatie</a>
+        <a href="omgeving.html" class="block text-white/80 font-light text-sm tracking-widest uppercase cursor-pointer">Omgeving</a>
+        <a href="contact.html" class="block text-white/80 font-light text-sm tracking-widest uppercase cursor-pointer">Contact</a>
+        <a href="contact.html" class="block gold-gradient text-white text-center px-6 py-3 rounded-full text-sm font-medium tracking-wider uppercase cursor-pointer">Boeken</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+    <img src="images/google_place_5.jpg" alt="Slaapkamer Arcosí B&B" class="absolute inset-0 w-full h-full object-cover" loading="eager">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 text-center px-4">
+      <p class="text-white/80 text-sm tracking-[0.3em] uppercase mb-4 font-sans">De accommodatie</p>
+      <h1 class="font-serif text-5xl lg:text-6xl text-white font-bold">Luxe Tiny House</h1>
+    </div>
+  </section>
+
+  <!-- Beschrijving -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="fluid-reveal">
+          <p class="text-accent text-sm tracking-[0.3em] uppercase font-medium mb-4">Uw verblijf</p>
+          <h2 class="font-serif text-4xl text-primary font-bold mb-6">Waar luxe en natuur samenkomen</h2>
+          <p class="text-dark/70 leading-relaxed font-light mb-6">
+            Onze luxe tiny house is een oase van rust en comfort. Het interieur combineert authentieke elementen — originele houten balken en een vintage kroonluchter — met moderne luxe en stijlvol design.
+          </p>
+          <p class="text-dark/70 leading-relaxed font-light">
+            Geniet van een kingsize bed met premium beddengoed, een ruime regendouche en een volledig uitgeruste keuken. Vanuit uw privé terras kijkt u uit over de groene tuin met zwembad. Alles is tot in detail verzorgd om uw verblijf onvergetelijk te maken.
+          </p>
+        </div>
+        <div class="fluid-reveal" style="transition-delay: 150ms;">
+          <img src="images/google_place_4.jpg" alt="Woonkamer met tuinzicht" class="w-full h-[450px] object-cover rounded-2xl shadow-2xl cursor-pointer lightbox-trigger" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voorzieningen -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fluid-reveal">
+        <p class="text-accent text-sm tracking-[0.3em] uppercase font-medium mb-4">Voorzieningen</p>
+        <h2 class="font-serif text-4xl text-primary font-bold">Alles wat u nodig heeft</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Kingsize Bed</h3>
+          <p class="text-dark/50 text-xs font-light">Premium beddengoed</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:80ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Regendouche</h3>
+          <p class="text-dark/50 text-xs font-light">Luxe badproducten</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:160ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Keuken</h3>
+          <p class="text-dark/50 text-xs font-light">Volledig uitgerust</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:240ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Zwembad</h3>
+          <p class="text-dark/50 text-xs font-light">Privé met ligbedden</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:320ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Smart TV</h3>
+          <p class="text-dark/50 text-xs font-light">Netflix & streaming</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:400ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">WiFi</h3>
+          <p class="text-dark/50 text-xs font-light">Snel & gratis</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:480ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Airco</h3>
+          <p class="text-dark/50 text-xs font-light">Altijd aangenaam</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center fluid-reveal" style="transition-delay:560ms">
+          <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H18.75m-7.5 0h7.5m-7.5 0l-1 1.085a1.125 1.125 0 01-.832.365H3.375"/></svg>
+          <h3 class="font-serif text-lg text-primary font-semibold mb-1">Parkeren</h3>
+          <p class="text-dark/50 text-xs font-light">Gratis op terrein</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerij -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fluid-reveal">
+        <p class="text-accent text-sm tracking-[0.3em] uppercase font-medium mb-4">Galerij</p>
+        <h2 class="font-serif text-4xl text-primary font-bold">Een blik op Arcosí</h2>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="lg:col-span-2 lg:row-span-2 rounded-2xl overflow-hidden fluid-reveal">
+          <img src="images/google_place_2.jpg" alt="Tuin en zwembad Arcosí" class="w-full h-full min-h-[300px] object-cover cursor-pointer lightbox-trigger hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-2xl overflow-hidden fluid-reveal" style="transition-delay:100ms">
+          <img src="images/google_place_5.jpg" alt="Slaapkamer" class="w-full h-full min-h-[200px] object-cover cursor-pointer lightbox-trigger hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-2xl overflow-hidden fluid-reveal" style="transition-delay:200ms">
+          <img src="images/google_place_4.jpg" alt="Woonkamer" class="w-full h-full min-h-[200px] object-cover cursor-pointer lightbox-trigger hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="col-span-2 lg:col-span-1 rounded-2xl overflow-hidden fluid-reveal" style="transition-delay:300ms">
+          <img src="images/google_place_3.jpg" alt="Zwembad met pand" class="w-full h-64 object-cover cursor-pointer lightbox-trigger hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="col-span-2 rounded-2xl overflow-hidden fluid-reveal" style="transition-delay:400ms">
+          <img src="images/google_place_1.jpg" alt="Naambord Arcosí" class="w-full h-64 object-cover cursor-pointer lightbox-trigger hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-3xl mx-auto px-4 text-center fluid-reveal">
+      <h2 class="font-serif text-4xl text-white font-bold mb-6">Overtuigd?</h2>
+      <p class="text-white/70 font-light mb-8">Boek uw verblijf bij Arcosí en ervaar luxe in het groen.</p>
+      <a href="contact.html" class="inline-block gold-gradient text-white px-8 py-3.5 rounded-full text-sm font-medium tracking-wider uppercase hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 cursor-pointer">Boek nu</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary border-t border-white/10 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Arcosí</h3>
+          <p class="text-white/60 font-light text-sm">Luxe B&B in Ravenstein aan de Maas.</p>
+        </div>
+        <div>
+          <h4 class="font-serif text-lg font-semibold mb-3">Pagina's</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-white/60 hover:text-white text-sm font-light transition-colors duration-200 cursor-pointer">Home</a></li>
+            <li><a href="accommodatie.html" class="text-white/60 hover:text-white text-sm font-light transition-colors duration-200 cursor-pointer">Accommodatie</a></li>
+            <li><a href="omgeving.html" class="text-white/60 hover:text-white text-sm font-light transition-colors duration-200 cursor-pointer">Omgeving</a></li>
+            <li><a href="contact.html" class="text-white/60 hover:text-white text-sm font-light transition-colors duration-200 cursor-pointer">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-serif text-lg font-semibold mb-3">Contact</h4>
+          <ul class="space-y-1 text-white/60 text-sm font-light">
+            <li>Hoogstraat 31, 5352LC Ravenstein</li>
+            <li><a href="tel:+31651000599" class="hover:text-white transition-colors duration-200 cursor-pointer">+31 6 51000599</a></li>
+            <li><a href="mailto:assouw001@home.nl" class="hover:text-white transition-colors duration-200 cursor-pointer">assouw001@home.nl</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-6 text-center">
+        <p class="text-white/40 text-xs">© 2026 Arcosí Bed & Breakfast</p>
+        <p class="text-white/30 text-xs mt-1">Gebouwd door <a href="https://www.code-lieshout.nl" class="hover:text-white/50 transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="Vergroot">
+  </div>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('hidden'));
+    document.querySelectorAll('.lightbox-trigger').forEach(img=>{
+      img.addEventListener('click',()=>{
+        document.getElementById('lightbox-img').src=img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lightbox').classList.remove('active')});
+    const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.fluid-reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
